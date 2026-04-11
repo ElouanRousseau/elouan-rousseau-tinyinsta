@@ -22,4 +22,4 @@ class TinyInstaUser(HttpUser):
         On utilise l'endpoint API prévu à cet effet dans main.py pour un test plus précis.
         """
         # On appelle l'API timeline en passant le nom de l'utilisateur
-        self.client.get(f"/api/timeline?user={self.username}")
+        self.client.get(f"/api/timeline?user={self.username}", name="/api/timeline")
