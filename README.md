@@ -17,7 +17,8 @@ curl -X POST "http://127.0.0.1:8080/admin/seed" -d "users=1000" -d "posts=100000
 ```
 On ajoute ensuite pour tester avec 40 puis 60 followees.
 
-Graphique expérience 1 : 
+### Graphique expérience 1 : 
+
 <img width="1000" height="600" alt="conc" src="https://github.com/user-attachments/assets/d8938aa6-385d-4899-a209-d365b882bb6a" />
 
 Suite à notre première expérience, nous pouvons remarquer que le temps moyen par requête est similaire de 1 à 100 utilisateurs et que ces temps de réponses sont rapides (moins de 150ms).
@@ -28,5 +29,7 @@ Pour 1000 utilisateurs, le temps moyen est inférieur à celui pour 500 utilisat
 
 Pour cette expérience, on peut en conclure que l'application est capable de passer à l'échelle sur la charge, pas par l'efficacité de son code mais seulement grâce à son infrastructure Cloud qui crée jusqu'à 20 instances. On remarque également que ce passage à l'échelle a créé une forte instabilité et des temps de latence très lents lors du pic soudain à 500 utilisateurs.
 
-Graphique expérience 2 : 
+
+### Graphique expérience 2 : 
+
 <img width="1000" height="600" alt="fanout" src="https://github.com/user-attachments/assets/031882b6-11c6-4d91-aef8-04fece5e5530" />
