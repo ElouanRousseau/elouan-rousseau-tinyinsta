@@ -33,3 +33,18 @@ Pour cette expérience, on peut en conclure que l'application est capable de pas
 ### Graphique expérience 2 : 
 
 <img width="1000" height="600" alt="fanout" src="https://github.com/user-attachments/assets/031882b6-11c6-4d91-aef8-04fece5e5530" />
+
+Pour cette deuxième expérience, les temps moyen de requêtes ont explosé par rapport à ceux de l'expérience 1, avec des moyennes de 6000ms à 10000ms, et un pic à 14000ms, ce qui est énorme et rend l'application peu utilisable voire inutilisable, car l'utilisateur attend une dizaine de secondes que sa page d'accueil se charge.
+
+Le système était en difficulté pour exécuter ces requêtes rapidement, ce qui est expliqué aussi par la grande variance qui montre une instabilité, ainsi que par l'augmentation de requêtes en échec (FAILED) car le système n'a pas pu les traiter correctement.
+
+C'est logique car pour afficher la timeline le serveur doit parcourir la liste des abonnements et rassembler tous les posts, ce qui exige un très grand nombre de requêtes quand le nombre d'abonnements augmente et explique le temps moyen par requête.
+
+
+### Conclusion
+
+L'architecture actuelle de l'application a montré ses limites lors de ces expériences et ne scale donc pas correctement.
+
+Sur la charge : L'application arrive à tenir la charge uniquement grâce à l'infrastructure matérielle, ce passage à l'échelle est brutal (multiplication des instances) et coûteux car il cause des lenteurs notamment lors du pic à 500 utilisateurs.
+
+Sur la taille des données : L'architecture est défaillante et s'effondre totalement lorsque le nombre d'abonnés augmente, donnant des temps de réponses ne rendant pas l'application agréable pour l'utilisateur.
