@@ -5,15 +5,15 @@ URL de la webapp : https://tp1-elouanrousseau.ew.r.appspot.com
 Le fichier locustfile.py a été généré grâce à Gemini.
 
 ### Expérience 1 : Passage à l'échelle sur la charge
-Commande permettant de remplir la base de données :
+Commande lançant le fichier seed.py qui permet de remplir la base de données avec les paramètres nécessaires pour l'expérience :
 ```bash
-curl -X POST "[http://127.0.0.1:8080/admin/seed](http://127.0.0.1:8080/admin/seed)" -d "users=1000" -d "posts=50000" -d "follows_min=20" -d "follows_max=20"
+python seed.py --users 1000 --posts 50000 --follows-min 20 --follows-max 20
 ```
 
 ### Expérience 2 : Passage à l'échelle sur la taille des données
-Commande permettant de remplir la base de données : 
+Commande lançant le fichier seed.py qui permet de remplir la base de données avec les paramètres nécessaires pour l'expérience : 
 ```bash
-curl -X POST "http://127.0.0.1:8080/admin/seed" -d "users=1000" -d "posts=100000" -d "follows_min=20" -d "follows_max=20"
+python seed.py --users 1000 --posts 100000 --follows-min 20 --follows-max 20
 ```
 On ajoute ensuite pour tester avec 40 puis 60 followees.
 
