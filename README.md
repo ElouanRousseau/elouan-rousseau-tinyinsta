@@ -19,7 +19,7 @@ On ajoute ensuite pour tester avec 40 puis 60 followees.
 
 ### Graphique expérience 1 : 
 
-<img width="1000" height="600" alt="conc" src="https://github.com/user-attachments/assets/d8938aa6-385d-4899-a209-d365b882bb6a" />
+<img width="1000" height="600" alt="conc" src="out/conc.png" />
 
 Suite à notre première expérience, nous pouvons remarquer que le temps moyen par requête est similaire de 1 à 100 utilisateurs et que ces temps de réponses sont rapides (moins de 150ms).
 
@@ -32,7 +32,7 @@ Pour cette expérience, on peut en conclure que l'application est capable de pas
 
 ### Graphique expérience 2 : 
 
-<img width="1000" height="600" alt="fanout" src="https://github.com/user-attachments/assets/031882b6-11c6-4d91-aef8-04fece5e5530" />
+<img width="1000" height="600" alt="fanout" src="out/fanout.png" />
 
 Pour cette deuxième expérience, les temps moyen de requêtes ont explosé par rapport à ceux de l'expérience 1, avec des moyennes de 6000ms à 10000ms, et un pic à 14000ms, ce qui est énorme et rend l'application peu utilisable voire inutilisable, car l'utilisateur attend une dizaine de secondes que sa page d'accueil se charge.
 
